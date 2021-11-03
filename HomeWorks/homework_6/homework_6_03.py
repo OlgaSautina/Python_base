@@ -5,6 +5,9 @@ class Worker:
         self.position = position_p  # должность
         self._income = {"wage": wage_p, "bonus": bonus_p}  # доход - оклад и премия
 
+
+class Position(Worker):
+
     def get_full_name(self):
         result = f'{self.surname} {self.name}'
         return result
@@ -14,7 +17,7 @@ class Worker:
         return total_income
 
 
-w = Worker("Ольга", "Саутина", "Senior Big Data Scientist", 200000, 50000)
+w = Position("Ольга", "Саутина", "Senior Big Data Scientist", 200000, 50000)
 print('HR менеджер Мария: ')
 print(f'- {w.get_full_name()}, добро пожаловать в нашу компанию!')
 print(f'- {w.get_total_income()} р - столько вы будете получать каждый месяц на позиции {w.position}.')
